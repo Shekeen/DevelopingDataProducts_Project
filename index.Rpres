@@ -1,0 +1,22 @@
+Developing Data Products
+========================================================
+Course Project Documentation
+
+Diamonds dataset plot
+========================================================
+
+The application plots the diamonds' price against weight in carats.  
+You have two checkboxes. One colors data points based on the diamond clarity, the other turns on logarithmic scale for both axes.
+
+Example plots
+========================================================
+
+Logarithmic scale and colors both turned off and on.
+
+```{r, echo=FALSE, fig.width=20}
+library(ggplot2)
+library(gridExtra)
+grid.arrange(qplot(carat, price, data=diamonds),
+             qplot(log(carat), log(price), data=diamonds, colour=clarity),
+             ncol=2)
+```
